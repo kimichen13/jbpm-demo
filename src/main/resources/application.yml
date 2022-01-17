@@ -1,6 +1,7 @@
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: info
+
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -9,11 +10,26 @@ spring:
     password: 123456
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate.hbm2ddl.auto: update
+      hibernate.show_sql: false
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
   h2:
     console:
       enabled: true
       settings:
         web-allow-others: true
-  devtools:
-    add-properties: false
+
+jbpm:
+  deployment-id: JBPM-DEMO
+  process-locations:
+    - test.bpmn
+  executor:
+    enabled: false
+
+narayana:
+  transaction-manager-id: 1

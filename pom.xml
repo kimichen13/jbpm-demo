@@ -54,6 +54,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>jbpm-spring-boot-starter-basic</artifactId>
+            <version>7.56.0.Final</version>
+        </dependency>
+
     </dependencies>
 
     <build>
